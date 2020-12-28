@@ -66,7 +66,7 @@ AddEventHandler('sbr_condom:condom1', function(source)
     end
     
     exports['mythic_progbar']:Progress({
-        name = "condom",
+        name = "condom1",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -104,7 +104,7 @@ AddEventHandler('sbr_condom:condom2', function(source)
     end
     
     exports['mythic_progbar']:Progress({
-        name = "condom",
+        name = "condom2",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -129,20 +129,19 @@ AddEventHandler('sbr_condom:condom2', function(source)
     end)
 end)
 
-RegisterNetEvent('sbr_condom:condom2')
-AddEventHandler('sbr_condom:condom2', function(source)
+RegisterNetEvent('sbr_condom:condom3')
+AddEventHandler('sbr_condom:condom3', function(source)
     local ped = PlayerPedId()
     local armor = GetPedArmour(ped)
-    local item = 'condom2'
+    local item = 'condom3'
     if (armor >= 10) then
         exports['mythic_notify']:DoHudText('error', 'Zaten bi kondom takılı!')
         TriggerServerEvent('returnItem', item)
         TriggerServerEvent('condomgive2', source)
         return 
     end
-    
     exports['mythic_progbar']:Progress({
-        name = "condom",
+        name = "condom3",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -165,6 +164,7 @@ AddEventHandler('sbr_condom:condom2', function(source)
             level = 0
         end
     end)
+
 end)
 
 RegisterCommand('xskondomcikart', function()
@@ -300,7 +300,7 @@ RegisterCommand('xlkondomcikart', function()
             animDict = "misscarsteal2peeing",
             anim = "peeing_loop",
             flags = 49,
-        },,
+        },
     }, function(status)
         if not status then
             SetPedArmour(ped, 0)
