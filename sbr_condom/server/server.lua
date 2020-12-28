@@ -6,13 +6,13 @@ end)
 
 ESX.RegisterUsableItem('condom', function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
-    TriggerClientEvent('sbr_condom:armour', source)
+    TriggerClientEvent('sbr_condom:condom', source)
     xPlayer.removeInventoryItem('condom', 1)
 end)
 
 ESX.RegisterUsableItem('condom1', function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
-    TriggerClientEvent('sbr_condom:armour1', source)
+    TriggerClientEvent('sbr_condom:condom1', source)
     xPlayer.removeInventoryItem('condom1', 1)
 end)
 
@@ -46,14 +46,6 @@ AddEventHandler('condomgive', function()
     xPlayer.addInventoryItem('condom', 1)
 end)
 
-
-RegisterNetEvent('condomgive2')
-AddEventHandler('condomgive2', function()
-    local xPlayer = ESX.GetPlayerFromId(source)
-    xPlayer.addInventoryItem('condom21, 1)
-end)
-
-
 RegisterNetEvent('condomgive2')
 AddEventHandler('condomgive2', function()
     local xPlayer = ESX.GetPlayerFromId(source)
@@ -75,7 +67,7 @@ end)
 RegisterNetEvent('condomcikart1')
 AddEventHandler('condomcikart1', function()
     local xPLayer = ESX.GetPlayerFromId(source)
-    xPLayer.addInventoryItem('condom1, 1)
+    xPLayer.addInventoryItem('condom1', 1)
 end)
 
 RegisterNetEvent('condomcikart2')
