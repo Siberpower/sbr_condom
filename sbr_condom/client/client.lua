@@ -46,7 +46,7 @@ AddEventHandler('sbr_condom:condom', function(source)
         },
     }, function(status)
         if not status then
-            AddArmourToPed(ped, Config.zirhxs)
+            AddArmourToPed(ped, 25)
             exports['mythic_notify']:DoHudText('success', 'Kondom takıldı.')
             level = 0
         end
@@ -66,7 +66,7 @@ AddEventHandler('sbr_condom:condom1', function(source)
     end
     
     exports['mythic_progbar']:Progress({
-        name = "condom1",
+        name = "condom",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -84,7 +84,7 @@ AddEventHandler('sbr_condom:condom1', function(source)
         },
     }, function(status)
         if not status then
-            AddArmourToPed(ped, Config.zirhs)
+            AddArmourToPed(ped, 50)
             exports['mythic_notify']:DoHudText('success', 'Kondom takıldı.')
             level = 0
         end
@@ -104,7 +104,7 @@ AddEventHandler('sbr_condom:condom2', function(source)
     end
     
     exports['mythic_progbar']:Progress({
-        name = "condom2",
+        name = "condom",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -122,7 +122,7 @@ AddEventHandler('sbr_condom:condom2', function(source)
         },
     }, function(status)
         if not status then
-            AddArmourToPed(ped, Config.zirhl)
+            AddArmourToPed(ped, 75)
             exports['mythic_notify']:DoHudText('success', 'Kondom takıldı.')
             level = 0
         end
@@ -137,11 +137,12 @@ AddEventHandler('sbr_condom:condom3', function(source)
     if (armor >= 10) then
         exports['mythic_notify']:DoHudText('error', 'Zaten bi kondom takılı!')
         TriggerServerEvent('returnItem', item)
-        TriggerServerEvent('condomgive2', source)
+        TriggerServerEvent('condomgive3', source)
         return 
     end
+    
     exports['mythic_progbar']:Progress({
-        name = "condom3",
+        name = "condom",
         duration = 10000,
         label = 'Kondom takılıyor!',
         useWhileDead = false,
@@ -159,12 +160,11 @@ AddEventHandler('sbr_condom:condom3', function(source)
         },
     }, function(status)
         if not status then
-            AddArmourToPed(ped, Config.zirhxl)
+            AddArmourToPed(ped, 100)
             exports['mythic_notify']:DoHudText('success', 'Kondom takıldı.')
             level = 0
         end
     end)
-
 end)
 
 RegisterCommand('xskondomcikart', function()
@@ -233,7 +233,7 @@ RegisterCommand('skondomcikart', function()
         if not status then
             SetPedArmour(ped, 0)
             TriggerServerEvent('condomcikart1')
-            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!!')
+            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!')
             level = 0
         end
     end)
@@ -269,7 +269,7 @@ RegisterCommand('lkondomcikart', function()
         if not status then
             SetPedArmour(ped, 0)
             TriggerServerEvent('condomcikart2')
-            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!!')
+            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!')
             level = 0
         end
     end)
@@ -305,18 +305,8 @@ RegisterCommand('xlkondomcikart', function()
         if not status then
             SetPedArmour(ped, 0)
             TriggerServerEvent('condomcikart3')
-            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!!')
+            exports['mythic_notify']:DoHudText('success', 'Kondomu çıkarttın!')
             level = 0
         end
     end)
 end)
-
-
--- Alt taraf düzenlenicek şimdilik böyle kalsın
-
-
---RegisterCommand('kondomcikart', function()
-  --  local furkangotten = exports["reload-skillbar"]:taskBar(4000,math.random(5,15))
-    --      furkangotten  ~= 100 then
-    --end)
-
